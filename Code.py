@@ -53,6 +53,22 @@ def yield_calc(y,a,h):
     dec_formate = f"{result:.2f}".rstrip("0").rstrip(".")
     print(f"Total Yield for {a:.2f} acre Land = {dec_formate} KG.")
 
+def area_conv():
+    while True:
+                con = int(input("""1.Acre   2.Bigha   3.Shatak
+Enter Area in - """))
+                if con == 1:
+                    area = float(input("Enter Area: "))
+                elif con == 2:
+                    area = float(float(input("Enter Area: "))*0.62)
+                elif con == 3:
+                    area = float(float(input("Enter Area: "))*0.01)
+                else:
+                    print("INVALID NUMBER!!!")
+                    print("")
+                    continue
+                return area
+
 while True:
     print("""
 Welcome to Agri Calculator""")
@@ -74,17 +90,17 @@ What do you want to calculate: """))
         print("")
         
         if calc == 1:
-            area = float(input("Enter Area in Acres: "))
+            area = area_conv()
             seed_calc(crop,area)
         elif calc == 2:
-            area = float(input("Enter Area in Acres: "))
+            area = area_conv()
             dose = float(input("Recommended Fertilizer Dose in KG per Acre: "))
             fertilizer_calc(dose,area)
         elif calc == 3:
-            area = float(input("Enter Area in Acres: "))
+            area = area_conv()
             plant_pop(crop,area)
         elif calc == 4:
-            area = float(input("Enter Area in Acres: "))
+            area = area_conv()
             water_calc(crop,area)
         elif calc == 5:
             tank_num = int(input("How many Tanks do you have: "))
@@ -96,11 +112,11 @@ What do you want to calculate: """))
                 pesticide = pest_list[pest]
             pest_calc(tank,tank_num,crop,pesticide)
         elif calc == 6:
-            area = float(input("Enter Area in Acres: "))
+            area = area_conv()
             yield_calc(crop,area,harvest)
 
         elif calc == 7:
-            area = float(input("Enter Area in Acres: "))
+            area = area_conv()
             dose = float(input("Recommended Fertilizer Dose in KG per Acre: "))
             tank_num = int(input("How many Tanks do you have: "))
             tank = float(input("Tank Capacity in Litres: "))
