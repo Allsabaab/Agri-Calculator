@@ -6,5 +6,7 @@ WebView of the App - https://shorturl.at/vN8W0
 So far, the Calculator can:
 
  • Estimate Total Seed, Fertilizer, Irrigation Water, Pesticide
+ 
  • Calculate Plant Population
+ 
  • Forecast Yield
